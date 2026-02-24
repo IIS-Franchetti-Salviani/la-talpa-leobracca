@@ -1,21 +1,35 @@
 classDiagram
-    Animal <|-- Duck
-    Animal <|-- Fish
-    Animal <|-- Zebra
-    Animal : +int age
-    Animal : +String gender
-    Animal: +isMammal()
-    Animal: +mate()
-    class Duck{
-      +String beakColor
-      +swim()
-      +quack()
+direction TB
+    class Gestore {
+	    +int age
+	    +String gender
+	    +isMammal()
+	    +mate()
     }
-    class Fish{
-      -int sizeInFeet
-      -canEat()
+
+    class Buca {
+	    +String beakColor
+	    +swim()
+	    +quack()
     }
-    class Zebra{
-      +bool is_wild
-      +run()
+
+    class Interfaccia {
+	    -int sizeInFeet
+	    -canEat()
     }
+
+    class Talpa {
+    }
+
+    class Giocatore {
+	    +bool is_wild
+	    +run()
+    }
+
+    class Classifica {
+    }
+
+    Gestore <|-- Buca
+    Gestore <|-- Interfaccia
+    Gestore <|-- Giocatore
+    Talpa -- Buca
