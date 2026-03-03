@@ -70,5 +70,18 @@ public class Grafica extends JFrame{
         countdown.start();
     }
 
-    
+    void avviaTalpe(){
+        gioco = new Timer(1500, e->{
+            int random = r.nextInt(5);
+            buche[random].setIcon(iconaTalpa);
+            Timer timerNascondi = new Timer(1000, f->{
+                buche[random].setIcon(iconaBuca);
+            });
+
+            timerNascondi.setRepeats(false);
+            timerNascondi.start();
+        });
+
+        gioco.start();
+    }
 }
