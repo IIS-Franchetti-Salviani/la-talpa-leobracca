@@ -14,7 +14,8 @@ public class ProgettoTalpe {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Gestore g = new Gestore();
+        g.setGioco();
     }
     
 }
