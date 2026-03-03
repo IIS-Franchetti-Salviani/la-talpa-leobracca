@@ -10,6 +10,7 @@ public class Gestore {
 
     void AddGiocatore(){
         Giocatore g = new Giocatore();
+        giocatori.add(g);
     }
 
 

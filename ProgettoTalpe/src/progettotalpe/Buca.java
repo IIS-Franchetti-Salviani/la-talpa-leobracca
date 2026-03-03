@@ -4,8 +4,9 @@ import java.util.*;
 public class Buca {
     Random r = new Random();
     int n = 0;
+    int punti;
 
-    void TalpaRandom(){
+    int TalpaRandom(){
         n = r.nextInt(0,11);
 
         if(n <= 5){
@@ -22,6 +23,8 @@ public class Buca {
             TalpaBomba t = new TalpaBomba();
 
         }
+
+        return punti;
 
     }
 }
