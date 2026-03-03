@@ -14,4 +14,22 @@ public class Grafica extends JFrame{
     private Timer gioco;
     private Timer countdown;
     private Random r = new Random();
+
+    public Grafica(){
+        //Impostazioni finestra
+        setTitle("Schiaccia la talpa");
+        setSize(600,500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new BorderLayout(10,10));
+
+        //Cariacamento immagini
+        try{
+            iconaBuca = new ImageIcon(getClass().getResource("buca.png"));
+            iconaTalpa = new ImageIcon(getClass().getResource("talpa.png"));
+        }
+        catch(Exception e){
+            System.out.println("Impossibile caricare le immagini");    
+        }
+
+    }
 }
