@@ -1,4 +1,3 @@
-package progettotalpe;
 import java.util.*;
 
 public class Gestore {

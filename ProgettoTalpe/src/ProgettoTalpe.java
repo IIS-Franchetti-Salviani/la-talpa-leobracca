@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package progettotalpe;
 
 /**
  *
@@ -15,6 +14,7 @@ public class ProgettoTalpe {
      */
     public static void main(String[] args) {
         Gestore g = new Gestore();
+        System.out.println("Ciao");
         g.setGioco();
     }
     
