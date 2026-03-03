@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.*;
 import javax.swing.Timer;
 public class Grafica extends JFrame{
@@ -23,8 +24,11 @@ public class Grafica extends JFrame{
 
         //Cariacamento immagini
         try{
-            iconaBuca = new ImageIcon(getClass().getResource("buca.png"));
-            iconaTalpa = new ImageIcon(getClass().getResource("talpa.png"));
+            ImageIcon originalBuca = new ImageIcon(getClass().getResource("buca.png"));
+            ImageIcon originalTalpa = new ImageIcon(getClass().getResource("talpa.png"));
+
+            iconaBuca = ridimensiona(originalBuca, 80,50);
+            iconaTalpa = sovrapponi(originalTalpa, iconaBuca);
         }
         catch(Exception e){
             System.out.println("Impossibile caricare le immagini");    
@@ -56,6 +60,32 @@ public class Grafica extends JFrame{
         setVisible(true);
         avviaTempo();
         avviaTalpe();
+    }
+
+    ImageIcon ridimensiona(ImageIcon original, int larghezza, int altezza){
+        Image immagine = original.getImage();
+        Image nuovaImmagine = immagine.getScaledInstance(larghezza, altezza, Image.SCALE_SMOOTH);
+        return new ImageIcon(nuovaImmagine);
+    }
+
+    ImageIcon sovrapponi(ImageIcon talpa, ImageIcon buca){
+        int larghezza = 110;
+        int altezza = 110;
+
+        BufferedImage combinata = new BufferedImage(altezza, larghezza, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g = combinata.createGraphics();
+
+        int x = (larghezza - buca.getIconWidth()) / 2;
+        int y = (altezza - talpa.getIconHeight()) -5;
+        g.drawImage(buca.getImage(), x, y, null);
+
+        int dimTalpa = 70;
+        x = (larghezza - dimTalpa) / 2;
+        y = (altezza - dimTalpa) / 45;
+        g.drawImage(talpa.getImage(), x, y, null);
+
+        g.dispose();
+        return new ImageIcon(combinata);
     }
 
     void avviaTempo(){

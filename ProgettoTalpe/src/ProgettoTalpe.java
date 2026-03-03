@@ -15,8 +15,6 @@ public class ProgettoTalpe {
     public static void main(String[] args) {
         Grafica f = new Grafica(); 
         f.setVisible(true);
-        Gestore g = new Gestore();
-        g.setGioco();
     }
     
 }
