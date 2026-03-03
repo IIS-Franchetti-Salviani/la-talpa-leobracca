@@ -1,5 +1,5 @@
 package progettotalpe;
 
-public class Talpa {
+public abstract class Talpa {
     
 }
