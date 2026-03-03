@@ -24,8 +24,10 @@ public class Grafica extends JFrame{
 
         //Cariacamento immagini
         try{
+            //System.out.println("Guarda: " + new java.io.File(".").getAbsolutePath());
             ImageIcon originalBuca = new ImageIcon(getClass().getResource("buca.png"));
             ImageIcon originalTalpa = new ImageIcon(getClass().getResource("talpa.png"));
+            //System.out.println("Talpa: " + originalTalpa.getIconWidth());
 
             iconaBuca = ridimensiona(originalBuca, 80,50);
             iconaTalpa = sovrapponi(originalTalpa, iconaBuca);
