@@ -51,5 +51,24 @@ public class Grafica extends JFrame{
             pannelloBuca.add(buche[i]);
         }
         add(pannelloBuca, BorderLayout.CENTER);
+
+        //Logica del gioco
+        setVisible(true);
+        avviaTempo();
+        avviaTalpe();
     }
+
+    void avviaTempo(){
+        countdown = new Timer(1000, e->{
+            tempoRimanente--;
+            labelTempo.setText("Tempo rimanente: " + tempoRimanente);
+            if(tempoRimanente <= 0){
+                fermaGioco();
+                JOptionPane.showMessageDialog(this, "Fine tempo!");
+            }
+        });
+        countdown.start();
+    }
+
+    
 }
