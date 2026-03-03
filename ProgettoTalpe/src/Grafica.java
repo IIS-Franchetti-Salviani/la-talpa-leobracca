@@ -84,4 +84,9 @@ public class Grafica extends JFrame{
 
         gioco.start();
     }
+
+    void fermaGioco(){
+        gioco.stop();
+        countdown.stop();
+    }
 }
