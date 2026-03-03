@@ -36,5 +36,20 @@ public class Grafica extends JFrame{
         labelTempo.setFont(new Font("Arial", Font.BOLD, 20));
         pannelloInfo.add(labelTempo);
         add(pannelloInfo, BorderLayout.NORTH);
+
+        //Buche
+        JPanel pannelloBuca = new JPanel();
+        pannelloBuca.setLayout(new GridLayout(1,5));
+        for(int i = 0; i < buche.length; i++){
+            buche[i] = new JButton();
+            buche[i].setIcon(iconaBuca);
+            buche[i].setBorderPainted(false);
+            buche[i].setFocusPainted(false);
+            buche[i].setRolloverIcon(iconaTalpa);
+            buche[i].setContentAreaFilled(false);
+            buche[i].setRolloverSelectedIcon(iconaTalpa);
+            pannelloBuca.add(buche[i]);
+        }
+        add(pannelloBuca, BorderLayout.CENTER);
     }
 }
