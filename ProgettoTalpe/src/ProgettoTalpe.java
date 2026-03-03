@@ -13,8 +13,9 @@ public class ProgettoTalpe {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Grafica f = new Grafica(); 
+        f.setVisible(true);
         Gestore g = new Gestore();
-        System.out.println("Ciao");
         g.setGioco();
     }
     
