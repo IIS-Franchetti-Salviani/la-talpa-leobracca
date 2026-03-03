@@ -7,7 +7,6 @@ public class Grafica extends JFrame{
     private JButton[] buche = new JButton[5];
     private JLabel labelTempo;
     private int tempoRimanente = 30;
-
     private ImageIcon iconaBuca;
     private ImageIcon iconaTalpa;
 
@@ -31,5 +30,11 @@ public class Grafica extends JFrame{
             System.out.println("Impossibile caricare le immagini");    
         }
 
+        //Gestione tempo
+        JPanel pannelloInfo = new JPanel();
+        labelTempo = new JLabel("Tempo rimanente: " + tempoRimanente);
+        labelTempo.setFont(new Font("Arial", Font.BOLD, 20));
+        pannelloInfo.add(labelTempo);
+        add(pannelloInfo, BorderLayout.NORTH);
     }
 }
