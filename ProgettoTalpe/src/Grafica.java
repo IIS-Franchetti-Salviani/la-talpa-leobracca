@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.*;
 import javax.swing.Timer;
@@ -53,7 +55,7 @@ public class Grafica extends JFrame{
             buche[i].setFont(new Font("Arial", Font.BOLD, 14));
             buche[i].setBackground(Color.LIGHT_GRAY);
         
-            buche[i].addActionListener(e->{
+            buche[i].addActionListener((ActionEvent e) -> {
                 JButton premuto = (JButton) e.getSource();
                 
                 if(premuto.getText().equals("Talpa")){
