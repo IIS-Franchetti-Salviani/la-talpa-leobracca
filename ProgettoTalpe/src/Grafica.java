@@ -22,6 +22,7 @@ public class Grafica extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(10,10));
 
+        /**
         //Cariacamento immagini
         try{
             //System.out.println("Guarda: " + new java.io.File(".").getAbsolutePath());
@@ -35,7 +36,8 @@ public class Grafica extends JFrame{
         catch(Exception e){
             System.out.println("Impossibile caricare le immagini");    
         }
-
+*/
+        
         //Gestione tempo
         JPanel pannelloInfo = new JPanel();
         labelTempo = new JLabel("Tempo rimanente: " + tempoRimanente);
@@ -47,16 +49,24 @@ public class Grafica extends JFrame{
         JPanel pannelloBuca = new JPanel();
         pannelloBuca.setLayout(new GridLayout(1,5));
         for(int i = 0; i < buche.length; i++){
-            buche[i] = new JButton();
-            buche[i].setIcon(iconaBuca);
-            buche[i].setBorderPainted(false);
-            buche[i].setFocusPainted(false);
-            buche[i].setRolloverIcon(iconaTalpa);
-            buche[i].setContentAreaFilled(false);
-            buche[i].setRolloverSelectedIcon(iconaTalpa);
-            pannelloBuca.add(buche[i]);
+            buche[i] = new JButton("Vuoto");
+            buche[i].setFont(new Font("Arial", Font.BOLD, 14));
+            buche[i].setBackground(Color.LIGHT_GRAY);
+        
+            buche[i].addActionListener(e->{
+                JButton premuto = (JButton) e.getSource();
+                
+                if(premuto.getText().equals("Talpa")){
+                    premuto.setText("Preso");
+                    premuto.setBackground(Color.GREEN);
+                }
+                
+                pannelloBuca.add(buche[i]);
+            });
+            
+            add(pannelloBuca, BorderLayout.CENTER);
         }
-        add(pannelloBuca, BorderLayout.CENTER);
+        
 
         //Logica del gioco
         setVisible(true);
