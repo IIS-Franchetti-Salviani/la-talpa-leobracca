@@ -32,7 +32,15 @@ public class GraficaGioco extends javax.swing.JFrame {
         
         elencoBuche = new Buca[]{b0, b1, b2, b3, b4};
         
+        this.getContentPane().add(b0);
+        this.getContentPane().add(b1);
+        this.getContentPane().add(b2);
+        this.getContentPane().add(b3);
+        this.getContentPane().add(b4);
         
+        this.revalidate();
+        this.repaint();
+        this.pack();
     }
 
     /**
@@ -46,6 +54,7 @@ public class GraficaGioco extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         buca1 = new javax.swing.JButton();
         buca2 = new javax.swing.JButton();
         buca3 = new javax.swing.JButton();
@@ -58,13 +67,33 @@ public class GraficaGioco extends javax.swing.JFrame {
 
         jButton2.setText("jButton2");
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buca1.setText("jButton1");
+        buca1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buca1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(buca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 117, -1, -1));
 
         buca2.setText("jButton2");
+        getContentPane().add(buca2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
 
         buca3.setText("jButton3");
+        getContentPane().add(buca3, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 117, -1, -1));
 
         buca4.setText("jButton4");
         buca4.addActionListener(new java.awt.event.ActionListener() {
@@ -72,58 +101,16 @@ public class GraficaGioco extends javax.swing.JFrame {
                 buca4ActionPerformed(evt);
             }
         });
+        getContentPane().add(buca4, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 212, -1, -1));
 
         buca5.setText("jButton5");
+        getContentPane().add(buca5, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 212, -1, -1));
 
         tempo.setText("tempo: 30");
+        getContentPane().add(tempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 20, 78, 38));
 
         punteggio.setText("punteggio: 0");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buca1)
-                    .addComponent(punteggio))
-                .addGap(61, 61, 61)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(tempo, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buca2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                        .addComponent(buca3)
-                        .addGap(27, 27, 27))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(buca4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(buca5)
-                .addGap(79, 79, 79))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tempo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(punteggio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(59, 59, 59)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buca1)
-                    .addComponent(buca2)
-                    .addComponent(buca3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buca4)
-                    .addComponent(buca5))
-                .addGap(65, 65, 65))
-        );
+        getContentPane().add(punteggio, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 20, -1, 38));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -131,6 +118,10 @@ public class GraficaGioco extends javax.swing.JFrame {
     private void buca4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buca4ActionPerformed
+
+    private void buca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buca1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,6 +156,7 @@ public class GraficaGioco extends javax.swing.JFrame {
     private javax.swing.JButton buca5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel punteggio;
     private javax.swing.JLabel tempo;
     // End of variables declaration//GEN-END:variables
