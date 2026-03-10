@@ -22,7 +22,9 @@ public class LogicaGioco implements Runnable{
         while(gioco == true){
             int iTalpa = r.nextInt(5);
             
-            
+            SwingUtilities.invokeLater(() -> {
+                gui.aggiornaBuca(iTalpa, true);
+            });
         }
     }
 }
