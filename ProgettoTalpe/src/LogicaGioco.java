@@ -28,6 +28,13 @@ public class LogicaGioco implements Runnable{
             
             int tFuori = r.nextInt(500, 1501);
             Thread.sleep(tFuori);
+            
+            SwingUtilities.invokeLater(() -> {
+                gui.aggiornaBuca(iTalpa, false);
+            });
+            
+            int nTalpa = r.nextInt(1000,3001);
+            Thread.sleep(nTalpa);
         }
     }
 }
