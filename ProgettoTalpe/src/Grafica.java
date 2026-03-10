@@ -63,7 +63,7 @@ public class Grafica extends JFrame{
                     premuto.setBackground(Color.GREEN);
                 }
                 
-                pannelloBuca.add(buche[i]);
+                //pannelloBuca.add(buche[i]);
             });
             
             add(pannelloBuca, BorderLayout.CENTER);

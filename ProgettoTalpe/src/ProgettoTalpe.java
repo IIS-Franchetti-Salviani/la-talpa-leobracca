@@ -13,8 +13,8 @@ public class ProgettoTalpe {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Grafica f = new Grafica(); 
-        f.setVisible(true);
+        GraficaGioco g = new GraficaGioco();
+        g.setVisible(true);
     }
     
 }
