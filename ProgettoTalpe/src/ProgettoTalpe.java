@@ -14,7 +14,14 @@ public class ProgettoTalpe {
      */
     public static void main(String[] args) {
         GraficaGioco g = new GraficaGioco();
+        
+        LogicaGioco logica = new LogicaGioco(g);
+        g.setup(logica);
+        
         g.setVisible(true);
+        
+        Thread t = new Thread(logica);
+        t.start();
     }
     
 }
