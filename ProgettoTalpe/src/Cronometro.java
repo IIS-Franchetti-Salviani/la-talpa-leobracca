@@ -2,22 +2,35 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
+import javax.swing.Timer;
 /**
  *
  * @author lbrac
  */
 class Cronometro {
-
-    Cronometro(int par, GraficaGioco gui, Manager aThis) {
+    int tempo;
+    Timer timer;
+    
+    Cronometro(int secondi, GraficaGioco gui, Manager manager) {
+        this.tempo = secondi;
+        this.timer = new Timer(1000, e ->{
+            if(tempo > 0){
+                tempo--;
+                gui.aggiornaTimer(secondi);
+            }
+            
+            else{
+                ((Timer)e.getSource()).stop();
+            }
+        });
     }
 
     void start() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        timer.start();
     }
 
     int getTempo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return tempo;
     }
     
 }
