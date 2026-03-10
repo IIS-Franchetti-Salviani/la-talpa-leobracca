@@ -109,6 +109,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton4"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buca4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buca5">
       <Properties>

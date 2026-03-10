@@ -10,12 +10,21 @@
 public class GraficaGioco extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GraficaGioco.class.getName());
+    Buca b0, b1, b2, b3, b4;
+    Buca[] elencoBuche;
+    LogicaGioco logica;
 
     /**
      * Creates new form GraficaGioco
      */
     public GraficaGioco() {
         initComponents();
+    }
+    
+    void setup(LogicaGioco logica){
+        this.logica = logica;
+        
+        
     }
 
     /**
@@ -50,6 +59,11 @@ public class GraficaGioco extends javax.swing.JFrame {
         buca3.setText("jButton3");
 
         buca4.setText("jButton4");
+        buca4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buca4ActionPerformed(evt);
+            }
+        });
 
         buca5.setText("jButton5");
 
@@ -105,6 +119,10 @@ public class GraficaGioco extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buca4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buca4ActionPerformed
 
     /**
      * @param args the command line arguments
