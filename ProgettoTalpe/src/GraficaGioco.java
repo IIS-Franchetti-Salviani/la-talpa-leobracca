@@ -40,7 +40,17 @@ public class GraficaGioco extends javax.swing.JFrame {
         
         this.revalidate();
         this.repaint();
-        this.pack();
+        this.pack();   
+    }
+    
+    void aggiornaBuca(int indice, boolean stato){
+        if(elencoBuche != null && indice >= 0 && indice < elencoBuche.length){
+            elencoBuche[indice].setStato(stato);
+        }
+        
+        else{
+            System.out.println("Errore indice buca");
+        }
     }
 
     /**
@@ -79,7 +89,7 @@ public class GraficaGioco extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(new java.awt.GridLayout());
 
         buca1.setText("jButton1");
         buca1.addActionListener(new java.awt.event.ActionListener() {
@@ -87,13 +97,13 @@ public class GraficaGioco extends javax.swing.JFrame {
                 buca1ActionPerformed(evt);
             }
         });
-        getContentPane().add(buca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 117, -1, -1));
+        getContentPane().add(buca1);
 
         buca2.setText("jButton2");
-        getContentPane().add(buca2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, -1, -1));
+        getContentPane().add(buca2);
 
         buca3.setText("jButton3");
-        getContentPane().add(buca3, new org.netbeans.lib.awtextra.AbsoluteConstraints(337, 117, -1, -1));
+        getContentPane().add(buca3);
 
         buca4.setText("jButton4");
         buca4.addActionListener(new java.awt.event.ActionListener() {
@@ -101,16 +111,16 @@ public class GraficaGioco extends javax.swing.JFrame {
                 buca4ActionPerformed(evt);
             }
         });
-        getContentPane().add(buca4, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 212, -1, -1));
+        getContentPane().add(buca4);
 
         buca5.setText("jButton5");
-        getContentPane().add(buca5, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 212, -1, -1));
+        getContentPane().add(buca5);
 
         tempo.setText("tempo: 30");
-        getContentPane().add(tempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(355, 20, 78, 38));
+        getContentPane().add(tempo);
 
         punteggio.setText("punteggio: 0");
-        getContentPane().add(punteggio, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 20, -1, 38));
+        getContentPane().add(punteggio);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
