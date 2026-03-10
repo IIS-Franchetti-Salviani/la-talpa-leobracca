@@ -53,9 +53,14 @@
     <Property name="rows" type="int" value="1"/>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Punteggio: 0"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="Tempo: 0"/>
       </Properties>
     </Component>
   </SubComponents>

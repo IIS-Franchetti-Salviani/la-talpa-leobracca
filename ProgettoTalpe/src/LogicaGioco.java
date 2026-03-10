@@ -21,7 +21,7 @@ public class LogicaGioco implements Runnable{
     
     synchronized void addPunti(){
         punteggio += 10;
-        System.out.println("Punteggio: " + punteggio);
+        gui.aggiornaPunti(punteggio);
     }
     
     @Override

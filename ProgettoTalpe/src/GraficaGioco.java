@@ -54,7 +54,11 @@ public class GraficaGioco extends javax.swing.JFrame {
     }
     
     void aggiornaTimer(int sec){
-        jLabel1.setText("Tempo:" + sec);
+        jLabel1.setText("Tempo: " + sec);
+    }
+    
+    void aggiornaPunti(int punti){
+        jLabel2.setText("Punteggio: " + punti);
     }
 
     /**
@@ -69,6 +73,7 @@ public class GraficaGioco extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
@@ -89,7 +94,10 @@ public class GraficaGioco extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 5));
 
-        jLabel1.setText("jLabel1");
+        jLabel2.setText("Punteggio: 0");
+        getContentPane().add(jLabel2);
+
+        jLabel1.setText("Tempo: 0");
         getContentPane().add(jLabel1);
 
         pack();
@@ -124,6 +132,7 @@ public class GraficaGioco extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
