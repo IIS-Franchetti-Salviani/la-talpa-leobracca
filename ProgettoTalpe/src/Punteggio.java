@@ -17,7 +17,7 @@ class Punteggio {
 
     void aggiungiPunto() {
         punti++;
-        gui.aggiornaPunteggio(punti);
+        gui.aggiornaPunti(punti);
     }
 
     int getPunti() {

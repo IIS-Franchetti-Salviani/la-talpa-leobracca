@@ -13,12 +13,12 @@ public class Buca extends JButton{
     ImageIcon iTalpa = new ImageIcon(getClass().getResource("/talpa.png"));
     
     
-    Buca(LogicaGioco logica){
+    Buca(Manager manager){
         this.setIcon(iBuca);
         
         this.addActionListener(e ->{
             if(talpa == true){
-                logica.addPunti();
+                manager.incrementaPunteggio();
                 setStato(false);
             }
         });
