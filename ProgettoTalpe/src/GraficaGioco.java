@@ -24,6 +24,14 @@ public class GraficaGioco extends javax.swing.JFrame {
     void setup(LogicaGioco logica){
         this.logica = logica;
         
+        b0 = new Buca(logica);
+        b1 = new Buca(logica);
+        b2 = new Buca(logica);
+        b3 = new Buca(logica);
+        b4 = new Buca(logica);
+        
+        elencoBuche = new Buca[]{b0, b1, b2, b3, b4};
+        
         
     }
 
