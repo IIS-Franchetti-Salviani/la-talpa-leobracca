@@ -10,6 +10,7 @@ import java.util.Random;
  */
 public class LogicaGioco implements Runnable{
     GraficaGioco gui;
+    int punteggio = 0;
     boolean gioco = true;
     Random r = new Random();
     
@@ -17,24 +18,35 @@ public class LogicaGioco implements Runnable{
         this.gui = gui;
     }
     
+    synchronized void addPunti(){
+        punteggio += 10;
+        System.out.println("Punteggio: " + punteggio);
+    }
+    
     @Override
     public void run(){
         while(gioco == true){
-            int iTalpa = r.nextInt(5);
+            try{
+                int iTalpa = r.nextInt(5);
             
-            SwingUtilities.invokeLater(() -> {
-                gui.aggiornaBuca(iTalpa, true);
-            });
+                SwingUtilities.invokeLater(() -> {
+                    gui.aggiornaBuca(iTalpa, true);
+                });
             
-            int tFuori = r.nextInt(500, 1501);
-            Thread.sleep(tFuori);
+                int tFuori = r.nextInt(500, 1501);
+                Thread.sleep(tFuori);
             
-            SwingUtilities.invokeLater(() -> {
-                gui.aggiornaBuca(iTalpa, false);
-            });
+                SwingUtilities.invokeLater(() -> {
+                    gui.aggiornaBuca(iTalpa, false);
+                });
             
-            int nTalpa = r.nextInt(1000,3001);
-            Thread.sleep(nTalpa);
-        }
+                int nTalpa = r.nextInt(1000,3001);
+                Thread.sleep(nTalpa);
+                }
+            
+            catch(InterruptedException e){
+                break;
+            }
+        }     
     }
 }
