@@ -29,6 +29,7 @@ public class LogicaGioco implements Runnable{
         Timer cronometro = new Timer(1000, e -> {
             if(tempo > 0){
                 tempo--;
+                gui.aggiornaTimer(tempo);
             }
             
             else{
@@ -36,6 +37,8 @@ public class LogicaGioco implements Runnable{
                 ((Timer)e.getSource()).stop();
             }
         });
+        
+        cronometro.start();
         
         while(gioco == true){
             try{
