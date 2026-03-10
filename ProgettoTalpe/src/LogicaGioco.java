@@ -10,6 +10,8 @@ import java.util.Random;
  */
 public class LogicaGioco implements Runnable{
     Manager manager;
+    boolean gioco = true;
+    Random r = new Random();
     
     LogicaGioco(Manager manager){
         this.manager = manager;
@@ -19,6 +21,10 @@ public class LogicaGioco implements Runnable{
         this.manager = manager;
     }
     
+    void stopGioco(){
+        this.gioco = false;
+    }
+    
     synchronized void addPunti(){
         punteggio += 10;
         gui.aggiornaPunti(punteggio);
@@ -26,42 +32,27 @@ public class LogicaGioco implements Runnable{
     
     @Override
     public void run(){
-        Timer cronometro = new Timer(1000, e -> {
-            if(tempo > 0){
-                tempo--;
-                gui.aggiornaTimer(tempo);
-            }
-            
-            else{
-                gioco = false;
-                ((Timer)e.getSource()).stop();
-            }
-        });
-        
-        cronometro.start();
-        
-        while(gioco == true){
-            try{
+        if (manager == null) {
+            return;
+        }
+
+        manager.avviaCronometro();
+
+        while (gioco) {
+            try {
                 int iTalpa = r.nextInt(5);
-            
-                SwingUtilities.invokeLater(() -> {
-                    gui.aggiornaBuca(iTalpa, true);
-                });
-            
-                int tFuori = r.nextInt(500, 1501);
-                Thread.sleep(tFuori);
-            
-                SwingUtilities.invokeLater(() -> {
-                    gui.aggiornaBuca(iTalpa, false);
-                });
-            
-                int nTalpa = r.nextInt(1000,3001);
-                Thread.sleep(nTalpa);
-                }
-            
-            catch(InterruptedException e){
-                break;
+
+                manager.impostaStatoBuca(iTalpa, true);
+                Thread.sleep(r.nextInt(500, 1501));
+
+                manager.impostaStatoBuca(iTalpa, false);
+
+                if (!gioco) break;
+                Thread.sleep(r.nextInt(1000, 3001));
+
+            } catch (InterruptedException e) {
+                break; 
             }
-        }     
+        }
     }
 }
