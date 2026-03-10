@@ -15,7 +15,7 @@ public class ProgettoTalpe {
     public static void main(String[] args) {
         GraficaGioco g = new GraficaGioco();
         
-        LogicaGioco logica = new LogicaGioco(g);
+        LogicaGioco logica = new LogicaGioco();
         g.setup(logica);
         
         g.setVisible(true);

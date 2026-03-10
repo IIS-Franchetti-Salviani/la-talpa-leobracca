@@ -21,21 +21,29 @@ public class GraficaGioco extends javax.swing.JFrame {
     }
     
     void setup(LogicaGioco logica){
+        this.elencoBuche = new Buca[5];
         Manager manager = new Manager(this, elencoBuche, logica);
+        logica.setManager(manager);
         
-        b0 = new Buca(manager);
-        b1 = new Buca(manager);
-        b2 = new Buca(manager);
-        b3 = new Buca(manager);
-        b4 = new Buca(manager);
+        this.b0 = new Buca(manager);
+        this.b1 = new Buca(manager);
+        this.b2 = new Buca(manager);
+        this.b3 = new Buca(manager);
+        this.b4 = new Buca(manager);
         
-        b0 = new Buca(manager);
-        b1 = new Buca(manager);
-        b2 = new Buca(manager);
-        b3 = new Buca(manager);
-        b4 = new Buca(manager);     
+        this.elencoBuche[0] = this.b0;
+        this.elencoBuche[1] = this.b1;
+        this.elencoBuche[2] = this.b2;
+        this.elencoBuche[3] = this.b3;
+        this.elencoBuche[4] = this.b4;
         
         logica.setManager(manager);
+        
+        for(Buca b: elencoBuche){
+            if(b != null){
+                b.setStato(false);
+            }
+        }
         
         this.getContentPane().setLayout(new GridLayout(1, 5));
         this.getContentPane().add(b0);
@@ -43,10 +51,6 @@ public class GraficaGioco extends javax.swing.JFrame {
         this.getContentPane().add(b2);
         this.getContentPane().add(b3);
         this.getContentPane().add(b4);
-        
-        for(Buca b: elencoBuche){
-            b.setStato(false);
-        }
         
         this.revalidate();
         this.repaint();

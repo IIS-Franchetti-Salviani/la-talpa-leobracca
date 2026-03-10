@@ -39,8 +39,12 @@ public class Manager {
     }
     
     void aggiornaBuca(int indice, boolean stato){
+        System.out.println("1");
         if(elencoBuche != null && indice >= 0 && indice < elencoBuche.length){
-            elencoBuche[indice].setStato(stato);
+            if(elencoBuche[indice] != null){
+                elencoBuche[indice].setStato(stato);
+                System.out.println("2");
+            }          
         }
         
         else{

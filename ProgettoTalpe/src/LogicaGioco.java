@@ -10,12 +10,8 @@ import java.util.Random;
  */
 public class LogicaGioco implements Runnable{
     Manager manager;
-    boolean gioco = true;
+    volatile boolean gioco = true;
     Random r = new Random();
-    
-    LogicaGioco(Manager manager){
-        this.manager = manager;
-    }
     
     void setManager(Manager manager){
         this.manager = manager;
@@ -30,19 +26,19 @@ public class LogicaGioco implements Runnable{
         if (manager == null) {
             return;
         }
-
         manager.avviaCronometro();
 
         while (gioco) {
             try {
                 int iTalpa = r.nextInt(5);
 
-                manager.impostaStatoBuca(iTalpa, true);
+                manager.aggiornaBuca(iTalpa, true);
                 Thread.sleep(r.nextInt(500, 1501));
 
-                manager.impostaStatoBuca(iTalpa, false);
+                manager.aggiornaBuca(iTalpa, false);
 
-                if (!gioco) break;
+                if (!gioco || manager.getTempo() <= 0) break;
+                
                 Thread.sleep(r.nextInt(1000, 3001));
 
             } catch (InterruptedException e) {

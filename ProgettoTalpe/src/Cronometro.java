@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 import javax.swing.Timer;
+import java.awt.event.*;
 /**
  *
  * @author lbrac
@@ -10,20 +11,26 @@ import javax.swing.Timer;
 class Cronometro {
     int tempo;
     Timer timer;
+    GraficaGioco gui;
     
     Cronometro(int secondi, GraficaGioco gui, Manager manager) {
         this.tempo = secondi;
-        this.timer = new Timer(1000, e ->{
-            if(tempo > 0){
-                tempo--;
-                gui.aggiornaTimer(secondi);
-            }
-            
-            else{
-                ((Timer)e.getSource()).stop();
+        this.gui = gui;
+        
+        this.timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(tempo > 0){
+                    tempo--;
+                    gui.aggiornaTimer(tempo);
+                }
+
+                else{
+                    ((Timer)e.getSource()).stop();
+                }
             }
         });
-    }
+    }    
 
     void start() {
         timer.start();
