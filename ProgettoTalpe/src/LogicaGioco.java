@@ -25,6 +25,9 @@ public class LogicaGioco implements Runnable{
             SwingUtilities.invokeLater(() -> {
                 gui.aggiornaBuca(iTalpa, true);
             });
+            
+            int tFuori = r.nextInt(500, 1501);
+            Thread.sleep(tFuori);
         }
     }
 }
