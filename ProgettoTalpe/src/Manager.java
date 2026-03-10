@@ -12,8 +12,10 @@ public class Manager {
     GraficaGioco gui;
     Punteggio punteggio;
     Cronometro cronometro;
+    LogicaGioco logica;
     
-    Manager(GraficaGioco gui, Buca[] buche){
+    Manager(GraficaGioco gui, Buca[] buche, LogicaGioco logica){
+        this.logica = logica;
         this.elencoBuche = buche;
         this.gui = gui;
         this.punteggio = new Punteggio(gui);

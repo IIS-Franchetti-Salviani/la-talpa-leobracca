@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
+import java.awt.GridLayout;
 /**
  *
  * @author braccalenti.leonardo
@@ -12,7 +12,6 @@ public class GraficaGioco extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GraficaGioco.class.getName());
     Buca b0, b1, b2, b3, b4;
     Buca[] elencoBuche;
-    LogicaGioco logica;
 
     /**
      * Creates new form GraficaGioco
@@ -22,24 +21,32 @@ public class GraficaGioco extends javax.swing.JFrame {
     }
     
     void setup(LogicaGioco logica){
-        this.logica = logica;
+        Manager manager = new Manager(this, elencoBuche, logica);
         
-        b0 = new Buca(logica);
-        b1 = new Buca(logica);
-        b2 = new Buca(logica);
-        b3 = new Buca(logica);
-        b4 = new Buca(logica);
+        b0 = new Buca(manager);
+        b1 = new Buca(manager);
+        b2 = new Buca(manager);
+        b3 = new Buca(manager);
+        b4 = new Buca(manager);
         
-        elencoBuche = new Buca[]{b0, b1, b2, b3, b4};
+        b0 = new Buca(manager);
+        b1 = new Buca(manager);
+        b2 = new Buca(manager);
+        b3 = new Buca(manager);
+        b4 = new Buca(manager);     
         
+        logica.setManager(manager);
+        
+        this.getContentPane().setLayout(new GridLayout(1, 5));
         this.getContentPane().add(b0);
         this.getContentPane().add(b1);
         this.getContentPane().add(b2);
         this.getContentPane().add(b3);
         this.getContentPane().add(b4);
         
-        Manager m = new Manager(this, elencoBuche);
-        logica.setManager(m);
+        for(Buca b: elencoBuche){
+            b.setStato(false);
+        }
         
         this.revalidate();
         this.repaint();
