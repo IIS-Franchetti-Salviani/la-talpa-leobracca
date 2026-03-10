@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.util.Random;
 /**
  *
@@ -11,6 +11,7 @@ import java.util.Random;
 public class LogicaGioco implements Runnable{
     GraficaGioco gui;
     int punteggio = 0;
+    int tempo = 30;
     boolean gioco = true;
     Random r = new Random();
     
@@ -25,6 +26,17 @@ public class LogicaGioco implements Runnable{
     
     @Override
     public void run(){
+        Timer cronometro = new Timer(1000, e -> {
+            if(tempo > 0){
+                tempo--;
+            }
+            
+            else{
+                gioco = false;
+                ((Timer)e.getSource()).stop();
+            }
+        });
+        
         while(gioco == true){
             try{
                 int iTalpa = r.nextInt(5);
