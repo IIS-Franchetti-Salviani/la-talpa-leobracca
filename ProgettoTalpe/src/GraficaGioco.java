@@ -38,6 +38,9 @@ public class GraficaGioco extends javax.swing.JFrame {
         this.getContentPane().add(b3);
         this.getContentPane().add(b4);
         
+        Manager m = new Manager(this, elencoBuche);
+        logica.setManager(m);
+        
         this.revalidate();
         this.repaint();
         this.pack();   

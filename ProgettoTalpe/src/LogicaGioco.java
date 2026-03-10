@@ -9,14 +9,14 @@ import java.util.Random;
  * @author braccalenti.leonardo
  */
 public class LogicaGioco implements Runnable{
-    GraficaGioco gui;
-    int punteggio = 0;
-    int tempo = 30;
-    boolean gioco = true;
-    Random r = new Random();
+    Manager manager;
     
-    LogicaGioco(GraficaGioco gui){
-        this.gui = gui;
+    LogicaGioco(Manager manager){
+        this.manager = manager;
+    }
+    
+    void setManager(Manager manager){
+        this.manager = manager;
     }
     
     synchronized void addPunti(){
