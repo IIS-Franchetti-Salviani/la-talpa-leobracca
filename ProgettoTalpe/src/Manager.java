@@ -36,4 +36,13 @@ public class Manager {
         return punteggio.getPunti(); 
     }
     
+    void aggiornaBuca(int indice, boolean stato){
+        if(elencoBuche != null && indice >= 0 && indice < elencoBuche.length){
+            elencoBuche[indice].setStato(stato);
+        }
+        
+        else{
+            System.out.println("Errore indice buca");
+        }
+    }
 }

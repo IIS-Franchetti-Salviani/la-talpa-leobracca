@@ -43,16 +43,6 @@ public class GraficaGioco extends javax.swing.JFrame {
         this.pack();   
     }
     
-    void aggiornaBuca(int indice, boolean stato){
-        if(elencoBuche != null && indice >= 0 && indice < elencoBuche.length){
-            elencoBuche[indice].setStato(stato);
-        }
-        
-        else{
-            System.out.println("Errore indice buca");
-        }
-    }
-    
     void aggiornaTimer(int sec){
         jLabel1.setText("Tempo: " + sec);
     }

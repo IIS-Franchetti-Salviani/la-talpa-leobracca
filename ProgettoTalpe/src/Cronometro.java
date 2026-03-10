@@ -8,5 +8,16 @@
  * @author lbrac
  */
 class Cronometro {
+
+    Cronometro(int par, GraficaGioco gui, Manager aThis) {
+    }
+
+    void start() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    int getTempo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
