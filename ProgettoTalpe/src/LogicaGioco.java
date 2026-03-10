@@ -17,5 +17,12 @@ public class LogicaGioco implements Runnable{
         this.gui = gui;
     }
     
-    
+    @Override
+    public void run(){
+        while(gioco == true){
+            int iTalpa = r.nextInt(5);
+            
+            
+        }
+    }
 }
