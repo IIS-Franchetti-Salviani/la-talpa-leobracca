@@ -65,13 +65,6 @@ public class GraficaGioco extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        buca1 = new javax.swing.JButton();
-        buca2 = new javax.swing.JButton();
-        buca3 = new javax.swing.JButton();
-        buca4 = new javax.swing.JButton();
-        buca5 = new javax.swing.JButton();
-        tempo = new javax.swing.JLabel();
-        punteggio = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -89,49 +82,10 @@ public class GraficaGioco extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
-
-        buca1.setText("jButton1");
-        buca1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buca1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buca1);
-
-        buca2.setText("jButton2");
-        getContentPane().add(buca2);
-
-        buca3.setText("jButton3");
-        getContentPane().add(buca3);
-
-        buca4.setText("jButton4");
-        buca4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buca4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(buca4);
-
-        buca5.setText("jButton5");
-        getContentPane().add(buca5);
-
-        tempo.setText("tempo: 30");
-        getContentPane().add(tempo);
-
-        punteggio.setText("punteggio: 0");
-        getContentPane().add(punteggio);
+        getContentPane().setLayout(new java.awt.GridLayout(1, 5));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void buca4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buca4ActionPerformed
-
-    private void buca1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buca1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buca1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,15 +113,8 @@ public class GraficaGioco extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buca1;
-    private javax.swing.JButton buca2;
-    private javax.swing.JButton buca3;
-    private javax.swing.JButton buca4;
-    private javax.swing.JButton buca5;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel punteggio;
-    private javax.swing.JLabel tempo;
     // End of variables declaration//GEN-END:variables
 }
