@@ -51,4 +51,15 @@ public class Manager {
             System.out.println("Errore indice buca");
         }
     }
+    
+    void fineGioco(){
+        int punti = getPunteggioFinale();
+        
+        javax.swing.JOptionPane.showMessageDialog(
+                gui,
+                "Tempo finito! \n Punteggio finale: " + punti,
+                "Fine partita",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE
+        ); 
+    }
 }

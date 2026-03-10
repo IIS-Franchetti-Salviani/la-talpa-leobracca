@@ -27,6 +27,7 @@ class Cronometro {
 
                 else{
                     ((Timer)e.getSource()).stop();
+                    manager.fineGioco();
                 }
             }
         });
