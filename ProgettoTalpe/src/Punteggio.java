@@ -8,16 +8,20 @@
  * @author lbrac
  */
 class Punteggio {
-
+    int punti = 0;
+    GraficaGioco gui;
+    
     Punteggio(GraficaGioco gui) {
+        this.gui = gui;
     }
 
     void aggiungiPunto() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        punti++;
+        gui.aggiornaPunteggio(punti);
     }
 
     int getPunti() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return punti;
     }
     
 }

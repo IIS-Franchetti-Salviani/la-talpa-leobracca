@@ -25,11 +25,6 @@ public class LogicaGioco implements Runnable{
         this.gioco = false;
     }
     
-    synchronized void addPunti(){
-        punteggio += 10;
-        gui.aggiornaPunti(punteggio);
-    }
-    
     @Override
     public void run(){
         if (manager == null) {
