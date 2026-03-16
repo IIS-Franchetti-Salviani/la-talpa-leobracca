@@ -16,7 +16,7 @@ class Punteggio {
     }
 
     void aggiungiPunto() {
-        punti++;
+        punti = punti +10;
         gui.aggiornaPunti(punti);
     }
 

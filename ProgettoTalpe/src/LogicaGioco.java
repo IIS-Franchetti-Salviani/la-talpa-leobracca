@@ -33,13 +33,13 @@ public class LogicaGioco implements Runnable{
                 int iTalpa = r.nextInt(5);
 
                 manager.aggiornaBuca(iTalpa, true);
-                Thread.sleep(r.nextInt(500, 1501));
+                Thread.sleep(r.nextInt(500, 1001));
 
                 manager.aggiornaBuca(iTalpa, false);
 
                 if (!gioco || manager.getTempo() <= 0) break;
                 
-                Thread.sleep(r.nextInt(1000, 3001));
+                Thread.sleep(r.nextInt(1000, 2001));
 
             } catch (InterruptedException e) {
                 break; 
